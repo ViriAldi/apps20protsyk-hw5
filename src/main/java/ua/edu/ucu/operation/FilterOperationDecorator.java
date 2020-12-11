@@ -2,17 +2,17 @@ package ua.edu.ucu.operation;
 
 import ua.edu.ucu.function.IntPredicate;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 public class FilterOperationDecorator extends BaseOperationDecorator {
     private IntPredicate predicate;
-    public FilterOperationDecorator(Operation operation, IntPredicate initIntPred) {
+    public FilterOperationDecorator(
+            Operation operation,
+            IntPredicate initIntPred) {
         super(operation);
         predicate = initIntPred;
 
     }
-    public int[] perform(int[] numbers){
+    public int[] perform(int[] numbers) {
         int[] newNumbers = operation.perform(numbers);
         int[] numsCopy = new int[newNumbers.length];
         int newLength = 0;

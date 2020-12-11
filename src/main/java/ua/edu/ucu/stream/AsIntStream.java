@@ -86,7 +86,7 @@ public class AsIntStream implements IntStream {
 
     public void forEach(IntConsumer action) {
         performOperations();
-        for (int i = 0; i < length; i++){
+        for (int i = 0; i < length; i++) {
             action.accept(stream[i]);
         }
 

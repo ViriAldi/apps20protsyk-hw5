@@ -3,7 +3,7 @@ package ua.edu.ucu.operation;
 public class BaseOperationDecorator implements Operation {
     protected Operation operation;
 
-    public BaseOperationDecorator(Operation initOperation){
+    public BaseOperationDecorator(Operation initOperation) {
         operation = initOperation;
     }
 

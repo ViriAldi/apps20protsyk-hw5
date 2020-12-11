@@ -2,7 +2,8 @@ package ua.edu.ucu.operation;
 
 import ua.edu.ucu.function.IntUnaryOperator;
 
-public class UnaryOperationDecorator extends BaseOperationDecorator{
+public class UnaryOperationDecorator
+        extends BaseOperationDecorator {
     private IntUnaryOperator unaryOperator;
     public UnaryOperationDecorator(
             Operation operation,
