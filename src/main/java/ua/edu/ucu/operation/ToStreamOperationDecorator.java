@@ -1,22 +1,23 @@
 package ua.edu.ucu.operation;
 
 import ua.edu.ucu.function.IntToIntStreamFunction;
-import ua.edu.ucu.function.IntUnaryOperator;
-import ua.edu.ucu.stream.IntStream;
 
 public class ToStreamOperationDecorator extends BaseOperationDecorator {
-    IntToIntStreamFunction toStreamOperation;
-    public ToStreamOperationDecorator(Operation operation, IntToIntStreamFunction initToStreamOperation) {
+    private IntToIntStreamFunction toStreamOperation;
+    public ToStreamOperationDecorator(
+            Operation operation,
+            IntToIntStreamFunction initToStreamOperation) {
         super(operation);
         toStreamOperation = initToStreamOperation;
 
     }
-    public int[] perform(int[] numbers){
+    public int[] perform(int[] numbers) {
         int[] newNumbers = operation.perform(numbers);
         int[][] newArrays = new int[newNumbers.length][];
         int newLength = 0;
         for (int i = 0; i < newNumbers.length; i++) {
-            newArrays[i] = toStreamOperation.applyAsIntStream(newNumbers[i]).toArray();
+            newArrays[i] = toStreamOperation
+                    .applyAsIntStream(newNumbers[i]).toArray();
             newLength += newArrays[i].length;
         }
 

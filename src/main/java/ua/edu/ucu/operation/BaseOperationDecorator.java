@@ -10,4 +10,5 @@ public class BaseOperationDecorator implements Operation {
     public int[] perform(int[] numbers) {
         return operation.perform(numbers);
     }
+
 }

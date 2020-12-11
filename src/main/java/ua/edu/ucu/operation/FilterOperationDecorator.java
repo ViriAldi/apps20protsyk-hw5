@@ -22,6 +22,9 @@ public class FilterOperationDecorator extends BaseOperationDecorator {
                 newLength += 1;
             }
         }
-        return Arrays.copyOf(numsCopy, newLength);
+        int[] finalNumbers = new int[newLength];
+        System.arraycopy(numsCopy, 0,
+                finalNumbers, 0, newLength);
+        return finalNumbers;
     }
 }

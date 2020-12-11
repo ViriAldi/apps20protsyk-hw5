@@ -3,8 +3,6 @@ package ua.edu.ucu.stream;
 import ua.edu.ucu.function.*;
 import ua.edu.ucu.operation.*;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 public class AsIntStream implements IntStream {
     private int[] stream;
@@ -49,7 +47,7 @@ public class AsIntStream implements IntStream {
     }
 
     public void checkEmpty() {
-        if (length == 0){
+        if (length == 0) {
             throw new IllegalArgumentException();
         }
     }
@@ -71,7 +69,7 @@ public class AsIntStream implements IntStream {
         performOperations();
         checkEmpty();
         int sum = 0;
-        for (int num: stream){
+        for (int num: stream) {
             sum += num;
         }
         return sum;
@@ -123,6 +121,8 @@ public class AsIntStream implements IntStream {
 
     public int[] toArray() {
         performOperations();
-        return Arrays.copyOf(stream, length);
+        int[] values = new int[length];
+        System.arraycopy(stream, 0, values, 0, length);
+        return values;
     }
 }
